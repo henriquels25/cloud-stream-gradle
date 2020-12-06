@@ -10,7 +10,7 @@ with the following options:
 ![image showing the options for this project in Spring Initilizr](images/spring_initializer_cloud_stream.png)
 
 ## Problem
-The project doesn't build, throwing the following error when trying to download the dependencies:
+The project doesn't build, throwing the following error when downloading the dependencies:
 
 ```
 Execution failed for task ':compileTestJava'.
@@ -29,7 +29,11 @@ Execution failed for task ':compileTestJava'.
 This project has a pipeline configured using [GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions),
 so the error can be observed in a CI environment.
 
-This [GitHub Actions execution](https://github.com/henriquels25/cloud-stream-gradle/runs/1506915780) shows the error.
+This [execution](https://github.com/henriquels25/cloud-stream-gradle/runs/1506915780) shows the error.
 
-The problem is caused by the dependency `testImplementation 'org.springframework.cloud:spring-cloud-stream:test-binder@test-jar'`
-and when it is removed, the project builds normally. 
+The problem is caused by the following dependency:
+
+`testImplementation 'org.springframework.cloud:spring-cloud-stream:test-binder@test-jar'`
+
+When it is removed, the project builds normally, as it can be observed in the branch `remove_test_dependency`
+and in [this](https://github.com/henriquels25/cloud-stream-gradle/actions/runs/404228729) pipeline execution.
