@@ -26,10 +26,7 @@ Execution failed for task ':compileTestJava'.
          project : > org.springframework.cloud:spring-cloud-stream-binder-kafka-streams:3.0.9.RELEASE > org.springframework.cloud:spring-cloud-stream-binder-kafka-core:3.0.9.RELEASE
 ```
 
-This project has a pipeline configured using [GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions),
-so the error can be observed in a CI environment.
-
-This [execution](https://github.com/henriquels25/cloud-stream-gradle/runs/1506915780) shows the error.
+This [GitHub Actions execution](https://github.com/henriquels25/cloud-stream-gradle/runs/1506915780) shows the error.
 
 The problem is caused by the following dependency:
 
