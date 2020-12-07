@@ -34,3 +34,18 @@ The problem is caused by the following dependency:
 
 When it is removed, the project builds normally, as it can be observed in the branch `remove_test_dependency`
 and in [this](https://github.com/henriquels25/cloud-stream-gradle/actions/runs/404228729) pipeline execution.
+
+The solution is changing the test dependency to the following:
+```
+       testImplementation("org.springframework.cloud:spring-cloud-stream") {
+           artifact {
+               name = "spring-cloud-stream"
+               extension = "jar"
+               type = "test-jar"
+               classifier = "test-binder"
+           }
+       } 
+```
+
+With this, the project builds, as it can be observed in [this](https://github.com/henriquels25/cloud-stream-gradle/runs/1507742542) 
+CI execution.
