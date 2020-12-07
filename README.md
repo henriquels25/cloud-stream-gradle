@@ -37,14 +37,14 @@ and in [this](https://github.com/henriquels25/cloud-stream-gradle/actions/runs/4
 
 The solution is changing the test dependency to the following:
 ```
-       testImplementation("org.springframework.cloud:spring-cloud-stream") {
-           artifact {
-               name = "spring-cloud-stream"
-               extension = "jar"
-               type = "test-jar"
-               classifier = "test-binder"
-           }
-       } 
+testImplementation("org.springframework.cloud:spring-cloud-stream") {
+    artifact {
+        name = "spring-cloud-stream"
+        extension = "jar"
+        type = "test-jar"
+        classifier = "test-binder"
+    }
+} 
 ```
 
 With this, the project builds, as it can be observed in [this](https://github.com/henriquels25/cloud-stream-gradle/runs/1507742542) 
